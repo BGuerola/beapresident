@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+    tailwind.config = {
+              theme: {
+                      extend: {
+                          colors:{
+                              'blauclar':'#d1e8f3',
+                              'blaumig':'#807bd9',
+                              'blaufort':'#4238ff',
+                              'blaufosc':'#1d4967',
+                              'roig':'#d83431'
+                          },
+                      },
+                  },
+                }
+</script>
+
+
+<title>Document</title>
+<body id="body">
+
+<div class="flex flex-col bg-blaufosc h-screen">
+
+
+<nav class="pt-5 flex justify-between container mx-auto text-blauclarclar w-screen">
+  <a href="/" class="text-4xl font-bold">
+    <img class="m-8" alt = "logo" title="AmericanFlag" src="images/americanFlag.png" width="150px"/>
+  </a>
+  
+  <div class="flex justify-end">
+      <a th:href="@{/login}" class="text-blauclar">login</a>
+      <span class="h6 text-blauclar text-primary">&nbsp|&nbsp</span>
+      <a th:href="@{/register}" class="text-blauclar">Registro</a>    
+  </div>
+
+</nav> 
+
+  <div class="flex container mx-auto items-center h-full">
+      <div class="flex w-1/2 flex-col">
+        <h1 class="font-bold text-blaumig text-5xl leading-tight mb-4">Be a President! </h1>
+        <h1 class="font-bold text-blaumig text-4xl leading-tight mb-4">Empieza tu carrera electoral</h1>
+        <p class="text-blauclar text-2xl"> Controla la tendencia de voto con tu <strong>programa electoral</strong>, consigue dinero de lobbys e inviertelos en mejorar tu posición.</p>
+        <p class="text-blauclar text-2xl"> Vence a tus adversarios y alzate como presidente de la nación más poderosa del mundo!.</p>  
+        <div>
+          <button type="submit" th:onclick="location.href='/login';"  class ="m-6 text-white bg-blaufort hover:bg-roig focus:ring-4 focus:outline-none focus:ring-blauclar font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center">Entrar</button> 
+        </div>
+      </div>
+  </div> 
+        
+  
+</div>
+
+
+</body>
+</html>

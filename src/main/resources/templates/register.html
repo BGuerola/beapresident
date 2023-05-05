@@ -1,0 +1,58 @@
+<!-- Define que el documento esta bajo el estandar de HTML 5 -->
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title> Formulario de Registro </title>    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+        
+        <link th:href="@{css/login.css}" rel="stylesheet">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <div id="contenedor">
+            <div id="central">
+                <div id="login">
+                    <div class="titulo">
+                        Bienvenido al Registro
+                    </div>
+                    <form id="loginform" th:action="@{/registrar}" method="post">
+                        <input type="text" name="username" placeholder="Usuario" required>
+                        
+                        <input type="password" name= "contrasenya" placeholder="Contraseña" required>
+                        
+                        <input type="hidden" name="rolename" value="user">
+                        
+                        <button type="submit" title="Ingresar" name="Ingresar">Register</button>
+                    </form>
+                    <div th:if="${param.loginError != null}" class="alert alert-danger" role="alert">
+                        Invalid username.
+                    </div>
+                </div>
+                <div class="inferior">
+                   	<a th:href="@{/index}">Volver</a>
+                </div>
+            </div>
+        </div>
+            
+    </body>
+</html>

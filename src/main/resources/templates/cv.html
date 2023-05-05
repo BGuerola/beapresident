@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+                theme: {
+                        extend: {
+                            colors:{
+                              'blauclar':'#d1e8f3',
+                              'blaumig':'#807bd9',
+                              'blaufort':'#4238ff',
+                              'blaufosc':'#1d4967',
+                              'roig':'#d83431',
+                              'rosaclar':'#ddbfb2',
+                              'roigclar':'#ba5349',
+                              'rosa':'#d49482',
+                            },
+                        },
+                    },
+                  }
+  </script>
+
+
+    <title>CV</title>
+
+  </head>
+
+<body id="body">
+
+<div class="flex flex-col justify-center items-center bg-blaufosc w-screen h-screen">
+
+  <form class = "m-40 mt-20 w-3/4">
+  
+    <fieldset class = "border-2">
+      <!-- Form Name -->
+      <legend class ="text-xl font-medium text-white">Candidato</legend>
+
+    <div class="flex ml-40 mr-40 justify-between"> 
+    
+        <!-- Text input-->
+        <div class="mb-6 grow">
+          <label for="nombre" class="block mb-2 text-sm font-medium text-white">Nombre</label>
+          <input type="text" id="nombre" class="bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5" placeholder="Nombre" required>
+        </div>
+
+    </div>
+
+
+    <div class="flex ml-40 mr-40 justify-end"> 
+        <!-- Text input-->
+        <div class="mb-6 grow">
+          <label for="localidad" class="block mb-2 text-sm font-medium text-white">Localidad</label>
+          <input type="text" id="apellido2" class="bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5" placeholder="localidad" required>
+        </div>
+
+        <div class="mb-6">
+          <label for="situacionlaboral" class="block mb-2 text-sm font-medium text-white">Situación Laboral</label>
+          <div class = "bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5">
+            <select id="situacionlaboral" name="situacionlaboral">
+              <option value="A(' trabajando'),'='">A("Trabajando"),</option>
+              <option value="B(' desempleo'),'='">B("Desempleo"),</option>
+              <option value="C(' mejora');'='">C("Mejora");</option>
+            </select>
+          </div>
+        </div>
+
+    </div>
+
+
+    <div class="flex ml-40 mr-40 justify-end"> 
+      <!-- Text input-->
+      <div class="mb-6">
+        <label for="fchanac" class="block mb-2 text-sm font-medium text-white">Fecha de nacimiento</label>
+        <input type="date" id="fchanac" class="bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5" placeholder="Fecha de nacimiento" required>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="mb-6">
+        <label for="sexo" class="block mb-2 text-sm font-medium text-white">Sexo</label>
+        <div class="bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5 ">
+          <select id="sexo" name="sexo">
+            <option value="hombre">hombre</option>
+            <option value="mujer">mujer</option>
+          </select>
+        </div>
+      </div>
+      <!-- Select Basic -->
+      <div class="mb-6">
+        <label for="nacio" class="block mb-2 text-sm font-medium text-white">Raza</label>
+        <div class = "bg-white border border-grismig text-blaufosc text-sm rounded-lg focus:rosa focus:border-rosa block w-full p-2.5">
+          <select id="nacionalidad" name="nacionalidad">
+            <option value="Española">Blancos</option>
+            <option value="Europea">Afroamericanos</option>
+            <option value="Extranjera">Hispanos</option>
+          </select>
+        </div>
+      </div>
+  
+
+  </div> 
+ <button type="submit" class=" ml-40 mb-10 text-white bg-roigclar hover:bg-roig focus:ring-4 focus:outline-none focus:ring-rosaclar font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+   
+</div>
+
+</fieldset>
+
+    
+    
+
+</form>
+
+</div>
+
+
+</body>
+
+
+</html>
